@@ -1,0 +1,15 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30001  # Maps NodePort 30001 to Mac localhost:30001
+        hostPort: 30001
+        protocol: TCP
+      - containerPort: 30002  # Add more if needed
+        hostPort: 30002
+        protocol: TCP
+      - containerPort: 30003
+        hostPort: 30003
+        protocol: TCP
+
